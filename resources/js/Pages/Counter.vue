@@ -2,20 +2,31 @@
 	<div class="container">
 		<h1 v-text="count" class="text-center my-5"></h1>
 		<div class="row justify-content-center">
-			<button class="btn btn-primary w-auto" @click="$store.commit('INCREMENT')">INCREMENT</button>
+			<button class="btn btn-primary w-auto" @click="inc">INCREMENT</button>
 		</div>
 	</div>
 </template>
 
 <script>
-	import { mapState } from 'vuex';
+	import { mapActions, mapState } from 'vuex';
 
 	export default {
 		name: 'counter',
+		
 		computed: {
-			...mapState({
-				count: state => state.count
-			})
+			...mapState('counter', {
+				count: (state) => state.count
+			}),
+		},
+
+		methods: {
+			...mapActions({
+				incCounter: 'counter/incCounter',
+			}),
+
+			inc() {
+				this.incCounter();
+			}
 		}
 	}
 </script>

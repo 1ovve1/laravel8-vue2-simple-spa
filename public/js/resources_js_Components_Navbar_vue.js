@@ -58,7 +58,18 @@ var render = function render() {
         name: "counter"
       }
     }
-  }, [_vm._v("Counter")])], 1)])])], 1)]);
+  }, [_vm._v("Counter")])], 1)]), _vm._v(" "), _c("ul", {
+    staticClass: "navbar-nav mr-auto"
+  }, [_c("li", {
+    staticClass: "nav-item active"
+  }, [_c("router-link", {
+    staticClass: "navbar-brand",
+    attrs: {
+      to: {
+        name: "login"
+      }
+    }
+  }, [_vm._v("Login")])], 1)])])], 1)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

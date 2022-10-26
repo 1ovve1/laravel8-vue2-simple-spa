@@ -8,6 +8,11 @@
 		            	<router-link :to="{ name: 'counter' }" class="navbar-brand">Counter</router-link>
 		          	</li>
 		        </ul>
+		        <ul class="navbar-nav mr-auto">
+		         	<li class="nav-item active">
+		            	<router-link :to="{ name: 'login' }" class="navbar-brand">Login</router-link>
+		          	</li>
+		        </ul>
 	      	</div>
 	    </nav>
 	</div>

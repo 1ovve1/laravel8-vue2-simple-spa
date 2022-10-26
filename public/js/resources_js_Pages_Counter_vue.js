@@ -18,11 +18,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'counter',
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapState)({
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapState)('counter', {
     count: function count(state) {
       return state.count;
     }
-  }))
+  })),
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)({
+    incCounter: 'counter/incCounter'
+  })), {}, {
+    inc: function inc() {
+      this.incCounter();
+    }
+  })
 });
 
 /***/ }),
@@ -53,9 +60,7 @@ var render = function render() {
   }, [_c("button", {
     staticClass: "btn btn-primary w-auto",
     on: {
-      click: function click($event) {
-        return _vm.$store.commit("INCREMENT");
-      }
+      click: _vm.inc
     }
   }, [_vm._v("INCREMENT")])])]);
 };
