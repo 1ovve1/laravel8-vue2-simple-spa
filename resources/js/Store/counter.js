@@ -7,7 +7,9 @@ export default {
 	},
 
 	mutations: {
-		INCREMENT: (state) => state.count++
+		INCREMENT: (state) => {
+			state.count++
+		}
 	},
 
 	actions: {
@@ -15,4 +17,7 @@ export default {
 			commit('INCREMENT');
 		},
 	},
+	getters: {
+		getCount: (state) => state.count
+	}
 }

@@ -14,6 +14,16 @@ const routes = [
 		component: () => import('../Pages/Login.vue'),
 		name: 'login',
 	},
+	{
+		path: '/register',
+		component: () => import('../Pages/Register.vue'),
+		name: 'register',
+	},
+	{
+		path: '/dashboard',
+		component: () => import('../Pages/Dashboard.vue'),
+		name: 'dashboard',
+	},
 ]
 
 export default routes;

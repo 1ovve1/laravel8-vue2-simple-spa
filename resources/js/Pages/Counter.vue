@@ -8,14 +8,14 @@
 </template>
 
 <script>
-	import { mapActions, mapState } from 'vuex';
+	import { mapActions, mapGetters } from 'vuex';
 
 	export default {
 		name: 'counter',
 		
 		computed: {
-			...mapState('counter', {
-				count: (state) => state.count
+			...mapGetters({
+				count: 'counter/getCount'
 			}),
 		},
 
