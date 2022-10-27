@@ -24,7 +24,7 @@ export default {
 			.then(({data}) => {
 				commit('SET_USER', data);
 				commit('SET_AUTH', true);
-				router.push({name: 'dashboard'});
+				router.push({name: 'home'});
 			}).catch(({response: {data}}) => {
 				commit('SET_USER', {});
 				commit('SET_AUTH', false);

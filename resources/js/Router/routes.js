@@ -19,11 +19,6 @@ const routes = [
 		component: () => import('../Pages/Register.vue'),
 		name: 'register',
 	},
-	{
-		path: '/dashboard',
-		component: () => import('../Pages/Dashboard.vue'),
-		name: 'dashboard',
-	},
 ]
 
 export default routes;

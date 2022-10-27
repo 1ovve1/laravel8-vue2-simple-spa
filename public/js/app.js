@@ -5341,7 +5341,9 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("header", {
     staticClass: "container"
-  }, [_c("Navbar"), _vm._v(" "), _c("router-view")], 1);
+  }, [_c("Navbar"), _vm._v(" "), _c("main", {
+    staticClass: "mt-3"
+  }, [_c("router-view")], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -5407,12 +5409,6 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Register.vue */ "./resources/js/Pages/Register.vue"));
   },
   name: 'register'
-}, {
-  path: '/dashboard',
-  component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Dashboard_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Dashboard.vue */ "./resources/js/Pages/Dashboard.vue"));
-  },
-  name: 'dashboard'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
 
@@ -5461,7 +5457,7 @@ __webpack_require__.r(__webpack_exports__);
         commit('SET_USER', data);
         commit('SET_AUTH', true);
         _Router_index__WEBPACK_IMPORTED_MODULE_0__["default"].push({
-          name: 'dashboard'
+          name: 'home'
         });
       })["catch"](function (_ref3) {
         var data = _ref3.response.data;
@@ -44956,7 +44952,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Components_Navbar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Components_Navbar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

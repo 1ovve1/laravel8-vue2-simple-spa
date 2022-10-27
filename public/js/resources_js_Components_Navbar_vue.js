@@ -73,49 +73,69 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-dark bg-dark"
+    staticClass: "navbar navbar-expand-lg bg-light"
+  }, [_c("div", {
+    staticClass: "container-fluid"
   }, [_c("a", {
     staticClass: "navbar-brand",
     attrs: {
-      href: "https://techvblogs.com/?ref=project",
-      target: "_blank"
+      href: "#"
     }
-  }, [_vm._v("TechvBlogs")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "navbar-expand"
+  }, [_vm._v("Simple SPA app")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarSupportedContent"
+    }
   }, [_c("ul", {
-    staticClass: "navbar-nav mr-auto"
+    staticClass: "navbar-nav me-auto mb-2 mb-lg-0"
   }, [_c("li", {
-    staticClass: "nav-item active"
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link active",
+    attrs: {
+      to: {
+        name: "home"
+      },
+      "aria-current": "page"
+    }
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item dropdown"
+  }, [_c("a", {
+    staticClass: "nav-link dropdown-toggle",
+    attrs: {
+      href: "#",
+      role: "button",
+      "data-bs-toggle": "dropdown",
+      "aria-expanded": "false"
+    }
+  }, [_vm._v("\n                            Tools\n                        ")]), _vm._v(" "), _c("ul", {
+    staticClass: "dropdown-menu"
+  }, [_c("li", [_c("router-link", {
+    staticClass: "dropdown-item",
+    attrs: {
+      to: {
+        name: "counter"
+      }
+    }
+  }, [_vm._v("Counter")])], 1)])]), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
       to: {
-        name: "dashboard"
+        name: "login"
       }
     }
-  }, [_vm._v("Home "), _c("span", {
-    staticClass: "sr-only"
-  }, [_vm._v("(current)")])])], 1)]), _vm._v(" "), _c("div", {
-    staticClass: "ml-auto"
-  }, [_c("ul", {
-    staticClass: "navbar-nav"
-  }, [_c("li", {
+  }, [_vm._v("Login")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
-  }, [_c("a", {
+  }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      href: "#"
+      to: {
+        name: "register"
+      }
     }
-  }, [_vm._v("\n                            " + _vm._s(_vm.user.name) + "\n                        ")]), _vm._v(" "), _c("div", {}, [_c("a", {
-    attrs: {
-      href: "javascript:void(0)"
-    },
-    on: {
-      click: _vm.logout
-    }
-  }, [_vm._v("Logout")])])])])])])]), _vm._v(" "), _c("main", {
-    staticClass: "mt-3"
-  }, [_c("router-view")], 1)]);
+  }, [_vm._v("Register")])], 1)])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -124,8 +144,8 @@ var staticRenderFns = [function () {
     staticClass: "navbar-toggler",
     attrs: {
       type: "button",
-      "data-toggle": "collapse",
-      "data-target": "#navbarSupportedContent",
+      "data-bs-toggle": "collapse",
+      "data-bs-target": "#navbarSupportedContent",
       "aria-controls": "navbarSupportedContent",
       "aria-expanded": "false",
       "aria-label": "Toggle navigation"

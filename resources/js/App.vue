@@ -1,7 +1,9 @@
 <template>
 	<header class="container">
 		<Navbar></Navbar>
-		<router-view></router-view>
+		<main class="mt-3">
+            <router-view></router-view>
+        </main>
 	</header>
 </template>
 
