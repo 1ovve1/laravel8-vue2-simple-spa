@@ -25,12 +25,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   components: {
     Logout: function Logout() {
       return __webpack_require__.e(/*! import() */ "resources_js_Components_Logout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Logout.vue */ "./resources/js/Components/Logout.vue"));
+    },
+    NavbarToogle: function NavbarToogle() {
+      return __webpack_require__.e(/*! import() */ "resources_js_Components_NavbarToogle_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./NavbarToogle.vue */ "./resources/js/Components/NavbarToogle.vue"));
     }
-  },
-  data: function data() {
-    return {
-      user: this.$store.state.auth.user
-    };
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
     isAuth: 'auth/isAuth',
@@ -91,7 +89,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Simple SPA app")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v("Simple SPA app")]), _vm._v(" "), _c("NavbarToogle"), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
     attrs: {
       id: "navbarSupportedContent"
@@ -127,8 +125,10 @@ var render = function render() {
         name: "counter"
       }
     }
-  }, [_vm._v("Counter")])], 1)])]), _vm._v(" "), _vm.isAuth ? _c("div", {
-    staticClass: "d-flex"
+  }, [_vm._v("Counter")])], 1)])])]), _vm._v(" "), _c("ul", {
+    staticClass: "navbar-nav"
+  }, [_vm.isAuth ? _c("div", {
+    staticClass: "d-flex flex-sm-column"
   }, [_c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
@@ -144,7 +144,7 @@ var render = function render() {
   })], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("Logout", [_vm._v(">")])], 1)]) : _vm._e(), _vm._v(" "), _vm.isNotAuth ? _c("div", {
-    staticClass: "d-flex"
+    staticClass: "d-flex flex-lg-row flex-column"
   }, [_c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
@@ -163,25 +163,9 @@ var render = function render() {
         name: "register"
       }
     }
-  }, [_vm._v("Register")])], 1)]) : _vm._e()])])])])]);
+  }, [_vm._v("Register")])], 1)]) : _vm._e()]), _vm._v(" "), _c("hr")])], 1)])]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("button", {
-    staticClass: "navbar-toggler",
-    attrs: {
-      type: "button",
-      "data-bs-toggle": "collapse",
-      "data-bs-target": "#navbarSupportedContent",
-      "aria-controls": "navbarSupportedContent",
-      "aria-expanded": "false",
-      "aria-label": "Toggle navigation"
-    }
-  }, [_c("span", {
-    staticClass: "navbar-toggler-icon"
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

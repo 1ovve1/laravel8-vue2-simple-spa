@@ -3,9 +3,7 @@
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Simple SPA app</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <NavbarToogle></NavbarToogle>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -22,7 +20,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <div v-if="isAuth" class="d-flex">
+                    </ul>
+                    <ul class="navbar-nav">
+                        <div v-if="isAuth" class="d-flex flex-sm-column">
                             <li class="nav-item">
                                 <router-link v-text="getUserName" :to="{name: 'home'}" class="nav-link"></router-link>
                             </li>
@@ -30,7 +30,7 @@
                                 <Logout>></Logout>
                             </li>
                         </div>
-                        <div v-if="isNotAuth" class="d-flex">
+                        <div v-if="isNotAuth" class="d-flex flex-lg-row flex-column">
                             <li class="nav-item">
                                 <router-link :to="{name: 'login'}" class="nav-link ">Login</router-link>
                             </li>
@@ -39,6 +39,7 @@
                             </li>
                         </div>
                     </ul>
+                    <hr>
                 </div>
             </div>
         </nav>
@@ -52,13 +53,9 @@ export default {
     name:"dashboard",
     components:{
         Logout: () => import ('./Logout.vue'),
+        NavbarToogle: () => import ('./NavbarToogle.vue'),
     },
 
-    data(){
-        return {
-            user: this.$store.state.auth.user
-        }
-    },
     computed: {
         ...mapGetters({
             isAuth: 'auth/isAuth',
@@ -75,7 +72,7 @@ export default {
                 this.signOut()
                 this.$router.push({name:"login"})
             })
-        }
+        },
     }
 }
 </script>
