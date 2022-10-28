@@ -22,11 +22,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "dashboard",
+  components: {
+    Logout: function Logout() {
+      return __webpack_require__.e(/*! import() */ "resources_js_Components_Logout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Logout.vue */ "./resources/js/Components/Logout.vue"));
+    }
+  },
   data: function data() {
     return {
       user: this.$store.state.auth.user
     };
   },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
+    isAuth: 'auth/isAuth',
+    isNotAuth: 'auth/isNotAuth',
+    getUserName: 'auth/getUserName'
+  })),
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)({
     signOut: "auth/logout"
   })), {}, {
@@ -117,7 +127,25 @@ var render = function render() {
         name: "counter"
       }
     }
-  }, [_vm._v("Counter")])], 1)])]), _vm._v(" "), _c("li", {
+  }, [_vm._v("Counter")])], 1)])]), _vm._v(" "), _vm.isAuth ? _c("div", {
+    staticClass: "d-flex"
+  }, [_c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: {
+        name: "home"
+      }
+    },
+    domProps: {
+      textContent: _vm._s(_vm.getUserName)
+    }
+  })], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("Logout", [_vm._v(">")])], 1)]) : _vm._e(), _vm._v(" "), _vm.isNotAuth ? _c("div", {
+    staticClass: "d-flex"
+  }, [_c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
@@ -135,7 +163,7 @@ var render = function render() {
         name: "register"
       }
     }
-  }, [_vm._v("Register")])], 1)])])])])]);
+  }, [_vm._v("Register")])], 1)]) : _vm._e()])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,

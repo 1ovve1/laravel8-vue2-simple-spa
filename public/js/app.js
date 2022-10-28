@@ -5434,11 +5434,31 @@ __webpack_require__.r(__webpack_exports__);
     user: {}
   },
   getters: {
-    auth: function auth(state) {
+    auth: function (_auth) {
+      function auth(_x) {
+        return _auth.apply(this, arguments);
+      }
+      auth.toString = function () {
+        return _auth.toString();
+      };
+      return auth;
+    }(function (state) {
+      return auth;
+    }),
+    isAuth: function isAuth(state) {
       return state.auth;
+    },
+    isNotAuth: function isNotAuth(state) {
+      return !state.auth;
     },
     user: function user(state) {
       return state;
+    },
+    getUserName: function getUserName(state) {
+      return state.user.name;
+    },
+    getUserEmail: function getUserEmail(state) {
+      return state.user.email;
     }
   },
   mutations: {
@@ -5534,9 +5554,7 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_4__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_4__["default"].Store({
-  plugins: [
-    // createPersistedState(),
-  ],
+  plugins: [(0,vuex_persistedstate__WEBPACK_IMPORTED_MODULE_0__["default"])()],
   modules: {
     auth: _auth__WEBPACK_IMPORTED_MODULE_1__["default"],
     counter: _counter__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -44952,7 +44970,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Components_Navbar_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Components_Navbar_vue":1,"resources_js_Components_Logout_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

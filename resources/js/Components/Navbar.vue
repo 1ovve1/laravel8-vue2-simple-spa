@@ -11,7 +11,7 @@
                         <li class="nav-item">
                             <router-link :to="{name: 'home'}" class="nav-link active" aria-current="page">Home</router-link>
                         </li>
-                    
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Tools
@@ -22,12 +22,22 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <router-link :to="{name: 'login'}" class="nav-link ">Login</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{name: 'register'}" class="nav-link">Register</router-link>
-                        </li>
+                        <div v-if="isAuth" class="d-flex">
+                            <li class="nav-item">
+                                <router-link v-text="getUserName" :to="{name: 'home'}" class="nav-link"></router-link>
+                            </li>
+                            <li class="nav-item">
+                                <Logout>></Logout>
+                            </li>
+                        </div>
+                        <div v-if="isNotAuth" class="d-flex">
+                            <li class="nav-item">
+                                <router-link :to="{name: 'login'}" class="nav-link ">Login</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link :to="{name: 'register'}" class="nav-link">Register</router-link>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -36,15 +46,25 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex';
+import {mapActions, mapGetters} from 'vuex';
 
 export default {
     name:"dashboard",
+    components:{
+        Logout: () => import ('./Logout.vue'),
+    },
 
     data(){
         return {
             user: this.$store.state.auth.user
         }
+    },
+    computed: {
+        ...mapGetters({
+            isAuth: 'auth/isAuth',
+            isNotAuth: 'auth/isNotAuth',
+            getUserName: 'auth/getUserName'
+        }),
     },
     methods:{
         ...mapActions({
