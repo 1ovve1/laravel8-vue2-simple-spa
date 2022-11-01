@@ -22,9 +22,9 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <div v-if="isAuth" class="d-flex flex-sm-column">
+                        <div v-if="isAuth" class="d-flex flex-lg-row flex-column">
                             <li class="nav-item">
-                                <router-link v-text="getUserName" :to="{name: 'home'}" class="nav-link"></router-link>
+                                <router-link v-text="getUserName" :to="{name: 'dashboard'}" class="nav-link"></router-link>
                             </li>
                             <li class="nav-item">
                                 <Logout>></Logout>

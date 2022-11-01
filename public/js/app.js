@@ -5409,6 +5409,12 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Register.vue */ "./resources/js/Pages/Register.vue"));
   },
   name: 'register'
+}, {
+  path: '/dashboard',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Dashboard_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Dashboard.vue */ "./resources/js/Pages/Dashboard.vue"));
+  },
+  name: 'dashboard'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
 
@@ -44985,7 +44991,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Components_Navbar_vue":1,"resources_js_Components_Logout_vue":1,"resources_js_Components_NavbarToogle_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Home_vue":1,"resources_js_Pages_Counter_vue":1,"resources_js_Pages_Login_vue":1,"resources_js_Pages_Register_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Components_Navbar_vue":1,"resources_js_Components_BoardList_vue":1,"resources_js_Components_Logout_vue":1,"resources_js_Components_NavbarToogle_vue":1,"resources_js_Components_Board_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
